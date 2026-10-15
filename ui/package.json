@@ -1,0 +1,18 @@
+{
+  "name": "pain-pointer-ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interface MCP App de Pain Pointer (dessins anatomiques à peindre)",
+  "scripts": {
+    "build": "vite build",
+    "embed": "node -e \"const fs=require('fs');fs.writeFileSync('../server/lib/app-html.js','// Generated from ui/dist/mcp-app.html. Do not edit.\\nexport default '+JSON.stringify(fs.readFileSync('dist/mcp-app.html','utf8'))+';\\n')\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^2.0.3"
+  },
+  "devDependencies": {
+    "vite": "^6.4.4",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

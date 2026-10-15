@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Pain Pointer</title>
+</head>
+<body>
+  <main id="app">
+    <div class="bar" id="schemas" role="group" aria-label="Schéma"></div>
+    <div class="bar tools">
+      <div class="segs" id="sides" role="group" aria-label="Côté" hidden></div>
+      <div class="segs" id="colors" role="group" aria-label="Pinceau"></div>
+    </div>
+    <div class="bar tools">
+      <div class="segs" id="sizes" role="group" aria-label="Taille du pinceau"></div>
+      <button class="icon" id="undo" aria-label="Annuler le dernier trait" title="Annuler">↶</button>
+      <button class="icon" id="wipe" aria-label="Effacer ce schéma" title="Effacer ce schéma">✕</button>
+      <button class="icon" id="full" aria-label="Plein écran" title="Plein écran">⤢</button>
+      <div class="segs" id="langs" role="group" aria-label="Langue"></div>
+    </div>
+    <div id="titles"></div>
+    <div id="stage">
+      <div id="drawing"></div>
+      <canvas id="paint" aria-label="Zone de peinture"></canvas>
+      <button id="cover" hidden>Agrandir pour peindre</button>
+    </div>
+    <p class="hint" id="hint"></p>
+    <div id="summary" aria-live="polite"></div>
+    <div class="actions">
+      <button class="btn primary" id="send">Envoyer à Claude</button>
+      <span id="status" aria-live="polite"></span>
+    </div>
+    <pre id="fallback" hidden></pre>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
